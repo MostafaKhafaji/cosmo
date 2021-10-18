@@ -16,6 +16,31 @@
 
     } */
     
+    .scroll {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(191, 135, 116);
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: white;
+        bottom: 15px;
+        right: 15px;
+        z-index: 9999;
+        display: none;
+        cursor: pointer;
+        opacity: 0;
+        transition: 0.7s;
+    }
+    /* .scrollsmooth {
+        right: 15px;
+        opacity: 1;
+        transition: 0.7s;
+    }
+     */
+    
     .search-pop {
         position: fixed;
         width: 100%;
@@ -270,8 +295,9 @@
             justify-content: flex-start;
             width: 80%;
             transform: translateX(100%);
-            z-index: 999;
+            z-index: -1;
             transition: all 0.5s ease;
+            opacity: 0;
         }
         header .head ul {
             flex-direction: column;
@@ -287,6 +313,8 @@
         }
         .nav-active {
             transform: translateX(0%) !important;
+            opacity: 1 !important;
+            z-index: 999 !important;
         }
         .nav-background {
             position: fixed;
@@ -375,16 +403,25 @@
         justify-content: center;
         gap: 7px;
         align-items: center;
+        padding-bottom: 15px;
     }
     
     .cat .owl-two .pro button {
         border-radius: 20px;
         height: 35px;
         line-height: 0;
-        background-image: linear-gradient( to right, #aa7a65, #bb8674);
-        border-color: white;
+        background-image: linear-gradient( to right, #aa7a65c0, #bb8674);
+        border: 1px solid white;
         outline: transparent;
         font-size: 14px;
+        width: 100px;
+        color: white;
+        transition: 0.3s;
+    }
+    
+    .cat .owl-two .pro button:hover {
+        color: #f7f7f7;
+        box-shadow: 0px 0px 8px 4px rgba(187, 134, 116, 0.69);
     }
     /* End Slider */
     /* Start Most Seller */

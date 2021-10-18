@@ -159,3 +159,23 @@ $(".search-pop span").on("click", function() {
     $(".search-pop").hide();
     $(".search-pop input").slideToggle();
 });
+
+let scr = document.querySelector(".scroll");
+window.onscroll = function() {
+    if (scrollY >= 600) {
+        scr.style.display = "flex";
+        let a = setTimeout(() => {
+            scr.style.opacity = "1";
+        }, 50);
+    } else {
+        scr.style.display = "none";
+        scr.style.opacity = "0";
+    }
+};
+
+scr.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
